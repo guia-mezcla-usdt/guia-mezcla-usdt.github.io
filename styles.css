@@ -747,6 +747,87 @@ details p {
   color: var(--agave-dark);
 }
 
+
+/* Practical polish: clearer focus, CTA feedback, and checklist readability. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid rgba(200, 101, 63, 0.55);
+  outline-offset: 4px;
+}
+
+.nav-links .nav-cta:hover,
+.nav-links .nav-cta:focus-visible,
+.button-primary:hover,
+.button-primary:focus-visible {
+  background: var(--agave-dark);
+  color: var(--white);
+  box-shadow: 0 16px 34px rgba(7, 91, 72, 0.24);
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible,
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  background: rgba(15, 139, 99, 0.1);
+}
+
+.check-item {
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.check-item:hover,
+.check-item:focus-within {
+  border-color: rgba(15, 139, 99, 0.26);
+  background: rgba(255, 250, 241, 0.95);
+}
+
+.check-item:has(input:checked) {
+  border-color: rgba(15, 139, 99, 0.32);
+}
+
+.check-item span,
+.network-card p,
+details p {
+  overflow-wrap: anywhere;
+}
+
+.network-row {
+  scrollbar-color: rgba(15, 139, 99, 0.45) rgba(255, 250, 241, 0.7);
+}
+
+.network-row::-webkit-scrollbar {
+  height: 0.6rem;
+}
+
+.network-row::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(15, 139, 99, 0.42);
+}
+
+details {
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+details[open] {
+  border-color: rgba(15, 139, 99, 0.22);
+  background: rgba(255, 250, 241, 0.78);
+}
+
+@media (max-width: 520px) {
+  .check-item {
+    align-items: start;
+  }
+
+  .check-item input {
+    margin-top: 0.15rem;
+  }
+
+  .section-heading p:not(.eyebrow) {
+    font-size: 0.96rem;
+  }
+}
 @keyframes riseIn {
   from {
     opacity: 0;
